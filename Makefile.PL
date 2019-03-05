@@ -2,6 +2,7 @@ use strict;
 use warnings;
 use inc::Module::Install;
 use Module::Install::XSUtil 0.21;
+use Module::Install::AuthorTests;
 
 if($] < 5.008_008){
 	my $v = sprintf '%vd', $^V;
@@ -22,7 +23,7 @@ all_from 'lib/PerlIO/Util.pm';
 
 test_requires 'Test::More' => 0.62;
 
-author_tests 'xt';
+author_tests ('xt');
 
 WriteMakefile(
     OBJECT              => '$(O_FILES)',
